@@ -5,7 +5,7 @@ import java.util.Scanner;
 //Пользователь вводит в консоли длины сторон треугольника (три числа), выводим
 //сообщение, является ли треугольник равнобедренным, равносторонним или
 //разносторонним.
-public class ThirdTask {
+public class ThirdTaskConditionalStatements {
     public static void  thirdTaskSolution() {
         Scanner scanner = new Scanner(System.in);
 

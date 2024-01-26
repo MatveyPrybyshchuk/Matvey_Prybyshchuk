@@ -3,7 +3,7 @@ package ConditionalStatements;
 import java.util.Scanner;
 
 //Пользователь вводит в консоли три числа, выводим самое большое из них.
-public class FifthTask {
+public class FifthTaskConditionalStatements {
     public static void fifthTaskSolution () {
         Scanner scanner = new Scanner(System.in);
         int nums[] = new int[3];

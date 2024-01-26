@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //Пользователь вводит в консоли два числа, выводим сообщение “первое число
 //больше/меньше, чем второе” в зависимости от результата их сравнения
-public class SecondTask {
+public class SecondTaskConditionalStatements {
     public static void secondTaskSolution() {
         Scanner scanner = new Scanner(System.in);
 

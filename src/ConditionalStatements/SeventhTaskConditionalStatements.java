@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //Пользователь вводит в консоли число. Выводим сообщение о том, четное число, или
 //нечетное
-public class SeventhTask {
+public class SeventhTaskConditionalStatements {
     public static void seventhTaskSolution() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число: ");

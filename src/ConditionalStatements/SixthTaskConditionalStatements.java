@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //Пользователь вводит в консоли три числа. Рассчитываем и выводим в консоль сумму
 //наибольшего и наименьшего из них
-public class SixthTask {
+public class SixthTaskConditionalStatements {
     public static void sixthTaskSolution() {
         Scanner scanner = new Scanner(System.in);
         int result;

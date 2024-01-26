@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //Пользователь вводит в консоли четыре числа. Рассчитываем и выводим в консоль
 //количество отрицательных и положительных чисел
-public class FourthTask {
+public class FourthTaskConditionalStatements {
     public static void fourthTaskSolution() {
         Scanner scanner = new Scanner(System.in);
         int counterForPos = 0;
