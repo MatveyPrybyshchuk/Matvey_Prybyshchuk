@@ -1,94 +1,168 @@
 package ConditionalStatements;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 //Программа “Магазин”, выводим меню из трех товаров с ценами. Пользователь выбирает
 //товар, вводит сумму денег. Если сумма меньше цены, выводим сообщение: “Денег не
 //хватает!”, если сумма равна цене – “Спасибо за покупку!”, если больше – “Ваша сдача:
 //[сумма сдачи]”
-public class Shop implements ActionListener  {
+public class Shop implements ActionListener {
 
     JFrame frame;
-    JTextField textField;
-    JButton[] numberButtons = new JButton[3];
-    JButton[] functionButtons = new JButton[8];
-    JButton addButton,subButton,mulButton,divButton;
-    JButton decButton, equButton, delButton, clrButton;
+    JTextField helloTextField, priceFieldForGoodFirst, priceFieldForGoodSecond, priceFieldForGoodThird, priceField, inputField, resultTextField;
+    JButton[] goodButtons = new JButton[2];
+    JButton goodFirst, goodSecond, goodThird, calculateBtn;
     JPanel panel;
 
-    Font myFont = new Font("Ink Free", Font.BOLD, 30);
-    double num1=0,num2=0,result=0;
-    char operator;
+    Font bigFont = new Font("Arial", Font.PLAIN, 35);
+    Font smallFont = new Font("Arial", Font.PLAIN, 15);
+    double selectedPrice = 0, money = 0;
+    double price1 = 100, price2 = 200, price3 = 300;
 
+
+    //Функция приведения внешнего вида в норму
+    public static JTextField fontsToNormal(JTextField el) {
+        el.setHorizontalAlignment(JLabel.CENTER);
+        return el;
+    }
 
     Shop() {
         frame = new JFrame("Shop");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(420, 550);
+        frame.setSize(500, 750);
         frame.setLayout(null);
 
-        textField = new JTextField();
-        textField.setBounds(50, 25, 300, 50);
-        textField.setFont(myFont);
-        frame.add(textField);
-        textField.setEditable(false);
+        helloTextField = new JTextField();
+        helloTextField.setBounds(50, 10, 400, 50);
+        helloTextField.setFont(bigFont);
+        helloTextField.setText("Меню");
+        //priceFieldForGoodFirst.setHorizontalAlignment(JLabel.CENTER);
+        helloTextField.setEditable(false);
+        //textFieldHello.setBackground(Color.GRAY);
 
-        addButton = new JButton("+");
-        subButton = new JButton("-");
-        mulButton = new JButton("*");
-        divButton = new JButton("/");
-        decButton = new JButton(".");
-        equButton = new JButton("=");
-        delButton = new JButton("Delete");
-        clrButton = new JButton("Clear");
+        //fontsToNormal(helloTextField);
 
-        functionButtons[0] = addButton;
-        functionButtons[1] = subButton;
-        functionButtons[2] = mulButton;
-        functionButtons[3] = divButton;
-        functionButtons[4] = decButton;
-        functionButtons[5] = equButton;
-        functionButtons[6] = delButton;
-        functionButtons[7] = clrButton;
+        panel = new JPanel();
+        panel.setBounds(50, 80, 400, 200);
+        panel.setLayout(new GridLayout(2, 3, 10, 10));
+        //panel.setBackground(Color.GRAY);
 
-        for (int i = 0; i < 8; i++) {
-            functionButtons[i].addActionListener(this);
-            functionButtons[i].setFont(myFont);
-            functionButtons[i].setFocusable(false);
-        }
-
-//        for (int i = 0; i < 10; i++) {
-//            numberButtons[i] = new JButton(String.valueOf(i));
-//            numberButtons[i].addActionListener(this);
-//            numberButtons[i].setFont(myfont);
-//            numberButtons[i].setFocusable(false);
-//        }
-        for(int i =0;i<10;i++) {
-            numberButtons[i] = new JButton(String.valueOf(i));
-            numberButtons[i].addActionListener(this);
-            numberButtons[i].setFont(myFont);
-            numberButtons[i].setFocusable(false);
-        }
-
-        delButton.setBounds(50, 430, 145, 50);
-        clrButton.setBounds(205, 430, 145, 50);
+        priceFieldForGoodFirst = new JTextField(String.valueOf(price1));
+        priceFieldForGoodFirst.setFont(smallFont);
+        priceFieldForGoodFirst.setEditable(false);
+        priceFieldForGoodFirst.setHorizontalAlignment(JLabel.CENTER);
 
 
-        frame.add(delButton);
-        frame.add(clrButton);
-        frame.add(textField);
+
+        priceFieldForGoodSecond = new JTextField(String.valueOf(price2));
+        priceFieldForGoodSecond.setFont(smallFont);
+        priceFieldForGoodSecond.setEditable(false);
+        priceFieldForGoodSecond.setHorizontalAlignment(JLabel.CENTER);
+        priceFieldForGoodThird = new JTextField(String.valueOf(price3));
+        priceFieldForGoodThird.setFont(smallFont);
+        priceFieldForGoodThird.setEditable(false);
+        priceFieldForGoodThird.setHorizontalAlignment(JLabel.CENTER);
+
+
+
+        goodFirst = new JButton("Товар 1");
+        goodFirst.addActionListener(this);
+        goodSecond = new JButton("Товар 2");
+        goodSecond.addActionListener(this);
+        goodThird = new JButton("Товар 3");
+        goodThird.addActionListener(this);
+
+
+
+        priceField = new JTextField("Цена: ");
+        priceField.setBounds(200, 320, 100, 50);
+        priceField.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        priceField.setFont(smallFont);
+        priceField.setEditable(false);
+
+        inputField = new JTextField();
+        inputField.setBounds(50, 410, 400, 50);
+        inputField.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        inputField.setFont(smallFont);
+        inputField.setText("Введите сумму: ......");
+        inputField.setEditable(true);
+        inputField.setHorizontalAlignment(JLabel.CENTER);
+
+        calculateBtn = new JButton("Рассчитать");
+        calculateBtn.addActionListener(this);
+        calculateBtn.setBounds(100, 500, 300, 80);
+
+        resultTextField = new JTextField();
+        resultTextField.setBounds(50, 610, 400, 50);
+        resultTextField.setFont(bigFont);
+        resultTextField.setText("");
+        resultTextField.setEditable(false);
+        resultTextField.setHorizontalAlignment(JLabel.CENTER);
+
+        panel.add(priceFieldForGoodFirst);
+        panel.add(priceFieldForGoodSecond);
+        panel.add(priceFieldForGoodThird);
+        panel.add(goodFirst);
+        panel.add(goodSecond);
+        panel.add(goodThird);
+
+
+        frame.add(panel);
+        frame.add(helloTextField);
+        frame.add(priceField);
+        frame.add(inputField);
+        frame.add(calculateBtn);
+        frame.add(resultTextField);
         frame.setVisible(true);
+
+        showMessageDialog(null, "Выберите товар, введите сумму средств, которой располагаете и нажмите на кнопку 'Рассчитать'");
 
     }
 
 
-    public static void eighthTaskSolution () {
+    public static void eighthTaskSolution() {
         Shop shop = new Shop();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        if (e.getSource() == goodFirst) {
+            priceField.setText("Цена: " + price1);
+            selectedPrice = price1;
+        }
+        if (e.getSource() == goodSecond) {
+            priceField.setText("Цена: " + price2);
+            selectedPrice = price2;
+        }
+        if (e.getSource() == goodThird) {
+            priceField.setText("Цена: " + price3);
+            selectedPrice = price3;
+        }
+
+        if (e.getSource() == calculateBtn && selectedPrice > 0) {
+            money = Double.parseDouble(inputField.getText());
+            if (selectedPrice > money) {
+                resultTextField.setText("Денег не хватает!");
+                resultTextField.setBackground(Color.ORANGE);
+            }
+            else if (selectedPrice == money) {
+                resultTextField.setText("Спасибо за покупку!");
+                resultTextField.setBackground(Color.GREEN);
+            }
+            else if (selectedPrice < money) {
+                resultTextField.setText("Ваша сдача: " + (money - selectedPrice));
+                resultTextField.setBackground(Color.GREEN);
+            }
+            else {
+                resultTextField.setText("Что-то пошло не так, попробуйте позже");
+                resultTextField.setBackground(Color.RED);
+            }
+        }
     }
 }
+//resultTextField.setBackground(Color);

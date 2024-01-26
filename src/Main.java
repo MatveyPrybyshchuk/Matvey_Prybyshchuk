@@ -12,8 +12,8 @@ public class Main {
         //FifthTask.fifthTaskSolution(); // 5
         //SixthTask.sixthTaskSolution();  // 6
         //SeventhTask.seventhTaskSolution(); // 7
+        //Calculator.eighthTaskSolution(); // 8
         Shop.eighthTaskSolution(); // 8
-
         //будут ли юзаться нее целочисленные?
 
     }
