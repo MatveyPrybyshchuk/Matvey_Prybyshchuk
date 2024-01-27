@@ -5,18 +5,19 @@ package Arrays;
 public class EighthTaskArrays {
 
     public static void eighthTaskSolution (int[][] array) {
-        int sumMax = array[0][0];
-
+        Integer sumMax = null;
 
 
         for (int i = 0; i < 5; i++) {
-            int sum = array[0][0];
+            Integer sum = null;
 
             for (int j = 0; j < 5; j++) {
-                sum += array[j][i];
+                if (sum == null) sum = array[j][i];
+                    else sum += array[j][i];
             }
-            if (sum > sumMax) sumMax = sum;
+            if (sumMax == null) sumMax = sum;
+            else if (sum > sumMax) sumMax = sum;
         }
-
+        System.out.println("Наибольшая сумма чисел по столбцам: "+ sumMax);
     }
 }

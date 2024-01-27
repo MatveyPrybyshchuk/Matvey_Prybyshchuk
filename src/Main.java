@@ -28,7 +28,6 @@ public class Main {
 
         //Блок "Массивы"
 
-
         //FirstTaskArrays.fifthTaskSolution(oneMerArray()); // 1
         //SecondTaskArrays.secondTaskSolution(oneMerArray()); // 2
         //ThirdTaskArrays.thirdTaskSolution(oneMerArray()); // 3
@@ -36,12 +35,11 @@ public class Main {
         //FifthTaskArrays.fifthTaskSolution(oneMerArray()); // 5
         //SixthTaskArrays.sixthTaskSolution(twoMerArray());  // 6
         //SeventhTaskArrays.seventhTaskSolution(twoMerArrayTen()); // 7
-        EighthTaskArrays.eighthTaskSolution(twoMerArrayFive()); // 8
+        //EighthTaskArrays.eighthTaskSolution(twoMerArrayFive()); // 8
+
+
 
         //будут ли юзаться нее целочисленные?
-
-
-
 
     }
 }
