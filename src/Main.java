@@ -1,6 +1,8 @@
-import Arrays.FirstTaskArrays;
+import Arrays.*;
 import ConditionalStatements.*;
 import Cycle.*;
+
+import static Sources.Arrays.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,14 +27,21 @@ public class Main {
         //FifthTaskCycle.fifthTaskSolution();  // 5
 
         //Блок "Массивы"
-        FirstTaskArrays.fifthTaskSolution(int [] array); // 1
 
 
+        //FirstTaskArrays.fifthTaskSolution(oneMerArray()); // 1
+        //SecondTaskArrays.secondTaskSolution(oneMerArray()); // 2
+        //ThirdTaskArrays.thirdTaskSolution(oneMerArray()); // 3
+        //FourthTaskArrays.fourthTaskSolution(oneMerArray());  // 4
+        //FifthTaskArrays.fifthTaskSolution(oneMerArray()); // 5
+        //SixthTaskArrays.sixthTaskSolution(twoMerArray());  // 6
+        //SeventhTaskArrays.seventhTaskSolution(twoMerArrayTen()); // 7
+        EighthTaskArrays.eighthTaskSolution(twoMerArrayFive()); // 8
 
         //будут ли юзаться нее целочисленные?
 
 
 
-        int[] array = {1, 2, 3, 4};
+
     }
 }
