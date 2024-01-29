@@ -10,6 +10,6 @@ public class SecondTaskArrays {
             result += array[i];
             i++;
         }
-        System.out.println("Сумма элементов с четными индексами: " + result);
+        System.out.println("Сумма элементов массива с четными индексами: " + result);
     }
 }

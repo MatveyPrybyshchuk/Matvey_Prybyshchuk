@@ -1,10 +1,10 @@
-package Sources;
+package SourcesForTasks;
 
 public class Arrays {
 
     public static int[] oneMerArray () {
 
-        int[] array = {0, -3, -3, 4, 6, -5, 0, 1, 2, -3, 0};
+        int[] array = {1, -3, -3, 4, 6, -5, 0, 1, 2, -3, 0};
         return array;
     }
 

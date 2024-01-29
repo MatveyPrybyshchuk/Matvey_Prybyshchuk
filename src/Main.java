@@ -2,25 +2,26 @@ import Arrays.*;
 import ConditionalStatements.*;
 import Cycle.*;
 
-import static Sources.Arrays.*;
+import static SourcesForTasks.Arrays.*;
+
 
 public class Main {
     public static void main(String[] args) {
 
         //Блок "Условные операторы"
 
-        //FirstTaskConditionalStatements.firstTaskSolution();  // 1
-        //SecondTask.secondTaskSolution();  // 2
-        //ThirdTask.thirdTaskSolution();  // 3
-        //FourthTask.fourthTaskSolution();  // 4
+        //FirstTaskConditionalStatements.firstTaskSolution();  // 1   100
+        //SecondTaskConditionalStatements.secondTaskSolution();  // 2 100
+        //ThirdTaskConditionalStatements.thirdTaskSolution();  // 3   100
+        //FourthTaskConditionalStatements.fourthTaskSolution();  // 4
         //FifthTask.fifthTaskSolution();  // 5
         //SixthTask.sixthTaskSolution();  // 6
         //SeventhTask.seventhTaskSolution();  // 7
-        //Shop.eighthTaskSolution();  // 8
+        Shop.eighthTaskSolution();  // 8
 
         //Блок "Циклы"
 
-        //FirstTaskCycle.firstTaskSolution();  // 1
+        //FirstTaskCycle.firstTaskSolution();  // 1 100
         //SecondTaskCycle.secondTaskSolution();  // 2
         //ThirdTaskCycle.thirdTaskSolution();  // 3
         //FourthTaskCycle.fourthTaskSolution();  // 4
@@ -28,18 +29,15 @@ public class Main {
 
         //Блок "Массивы"
 
-        //FirstTaskArrays.fifthTaskSolution(oneMerArray()); // 1
-        //SecondTaskArrays.secondTaskSolution(oneMerArray()); // 2
-        //ThirdTaskArrays.thirdTaskSolution(oneMerArray()); // 3
-        //FourthTaskArrays.fourthTaskSolution(oneMerArray());  // 4
+        //FirstTaskArrays.fifthTaskSolution(oneMerArray()); // 1    100
+        //SecondTaskArrays.secondTaskSolution(oneMerArray()); // 2    100
+        //ThirdTaskArrays.thirdTaskSolution(oneMerArray()); // 3  100
+        //FourthTaskArrays.fourthTaskSolution(oneMerArray());  // 4 100
         //FifthTaskArrays.fifthTaskSolution(oneMerArray()); // 5
-        //SixthTaskArrays.sixthTaskSolution(twoMerArray());  // 6
-        //SeventhTaskArrays.seventhTaskSolution(twoMerArrayTen()); // 7
-        //EighthTaskArrays.eighthTaskSolution(twoMerArrayFive()); // 8
+        //SixthTaskArrays.sixthTaskSolution(twoMerArrayTen());  // 6  100
+        //SeventhTaskArrays.seventhTaskSolution(twoMerArrayTen()); // 7 100
+        //EighthTaskArrays.eighthTaskSolution(twoMerArrayFive()); // 8    100
 
-
-
-        //будут ли юзаться нее целочисленные?
-
+        //estmap.method();
     }
 }

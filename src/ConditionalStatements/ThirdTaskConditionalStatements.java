@@ -9,16 +9,20 @@ public class ThirdTaskConditionalStatements {
     public static void  thirdTaskSolution() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Введите длину первой стороны треугольника");
-        int side1 = scanner.nextInt();
-        System.out.println("Введите длину второй стороны треугольника");
-        int side2 = scanner.nextInt();
-        System.out.println("Введите длину третьей стороны треугольника");
-        int side3 = scanner.nextInt();
+        try {
+            System.out.println("Введите последовательно длины сторон треугольника");
+            int side1 = scanner.nextInt();
+            int side2 = scanner.nextInt();
+            int side3 = scanner.nextInt();
 
-        if (side1 == side2 || side1 == side3 || side2 == side3) System.out.println("Треугольник равнобедренный!");
-        else if (side1 == side2 && side1== side3) System.out.println("Треугольник равносторонний!");
-        else if (side1 <= 0 && side2 <= 0 && side3 <= 0) System.out.println("Такого треугольника не существует!");
-        else System.out.println("Треугольник разносторонний!");
+            if (side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1)
+                if (side1 == side2 && side1 == side3) System.out.println("Треугольник равносторонник!");
+                else if ((side1 == side3 && side1 == side2) || (side2 == side3 & side2 == side1) || (side3 == side1 && side3 == side2)) System.out.println("Треугольник равнобедренный!");
+                else System.out.println("Треугольник разносторонний!");
+            else
+                System.out.println("Такого треугольника не существует!");
+        } catch (Exception e) {
+            System.out.println("Неверно введенные данные, попробуйте еще раз");
+        }
     }
 }
