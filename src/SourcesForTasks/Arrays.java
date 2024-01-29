@@ -2,14 +2,12 @@ package SourcesForTasks;
 
 public class Arrays {
 
-    public static int[] oneMerArray () {
-
-        int[] array = {1, -3, -3, 4, 6, -5, 0, 1, 2, -3, 0};
-        return array;
+    public static Integer[] oneMerArray () {
+        //return new Integer[]{1, -3, -3, 4, 6, -5, 0, 1, 2, -3, 0};
+        return new Integer[]{1, 2, 3, 4, 5, 5, 0, 0, 0};
     }
-
-    public static int[][] twoMerArrayTen () {
-        int [][] array = new int[][] {
+    public static Integer[][] twoMerArrayTen () {
+        return new Integer[][] {
                 {1, 2, 3, 4, 5, 6, 7 ,8 ,9, 2},
                 {2, 1, 3, 4, 5, 6, 7 ,8 ,2, 0},
                 {3, 2, 1, 4, 5, 6, 7 ,2 ,9, 0},
@@ -21,17 +19,14 @@ public class Arrays {
                 {9, 2, 3, 4, 5, 6, 7 ,8 ,1, 0},
                 {2, 2, 3, 4, 5, 6, 7 ,8 ,9, 1}
         };
-        return array;
     }
-
-    public static int[][] twoMerArrayFive () {
-        int [][] array = new int[][] {
+    public static Integer[][] twoMerArrayFive () {
+        return new Integer[][] {
                 {6, 2, 3, 4, 5},
                 {6, 2, 3, 4, 5},
                 {6, 2, 3, 4, 5},
                 {6, 2, 3, 4, 5},
                 {6, 2, 3, 4, 5}
         };
-        return array;
     }
 }

@@ -7,25 +7,26 @@ import java.util.Scanner;
 public class SixthTaskConditionalStatements {
     public static void sixthTaskSolution() {
         Scanner scanner = new Scanner(System.in);
-        int result;
-        int nums[] = new int[3];
+        Double numMax = null, numMin = null;
+        double[] array = new double[3];
 
         System.out.println("Введите последовательно 3 числа");
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = scanner.nextInt();
+        try {
+            for (int i = 0; i < array.length; i++) {
+                array[i] = scanner.nextDouble();
+            }
+            for (int i = 0; i < array.length; i++) {
+                if (numMax != null) {
+                    if (array[i] > numMax) numMax = array[i];
+                    else if (array[i] < numMin) numMin = array[i];
+                } else {
+                    numMax = array[i];
+                    numMin = array[i];
+                }
+            }
+            System.out.println("Сумма наибольшего и наименьшего числа: " + (numMax + numMin));
+        } catch (Exception e) {
+            System.out.println("Неверный ввод. Попробуйте еще раз");
         }
-        int intMax = nums[0];
-        int intMin = nums[0];
-
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] > nums[i - 1]) intMax = nums[i];
-        }
-
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] < nums[i - 1]) intMin = nums[i];
-        }
-
-        result = intMax + intMin;
-        System.out.println("Сумма наибольшего и наименьшего числа: " + result);
     }
 }

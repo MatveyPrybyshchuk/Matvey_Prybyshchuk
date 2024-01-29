@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class FifthTaskCycle {
     public static void fifthTaskSolution () {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите строку:");
 
+        System.out.println("Введите строку:");
         for (char ch: scanner.nextLine().toCharArray()) {
             System.out.println(ch);
         }

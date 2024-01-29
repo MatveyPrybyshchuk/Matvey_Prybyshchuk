@@ -7,28 +7,21 @@ import java.util.Scanner;
 public class ThirdTaskCycle {
     public static void thirdTaskSolution () {
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Введите число:");
-        int num = scanner.nextInt();
+        try {
+            int num = scanner.nextInt();
 
-        int nums[] = new int[3];
-        nums[0] = 0;
-        nums[1] = 1;
-        int result = 0;
+            int[] array = new int[num + 1];
+            array[0] = 0;
+            if (array.length > 1) array[1] = 1;
 
-
-        if (num == 0) System.out.println("Ваше число: " + 0);
-        else if (num == 1) System.out.println("Ваше число: " + 1);
-
-        else {
-            for (int i = 2; i < num; i++) {
-                nums[2] = nums[0] + nums[1];
-                nums[0] = nums[1];
-                nums[1] = nums[2];
+            for (int i = 2; i < array.length; i++) {
+                array[i] = array[i - 1] + array[i - 2];
             }
-            result = nums[1];
-            System.out.println("Ваше число: " + result);
+            System.out.println("Ваше число: " + array[num]);
+        } catch (Exception e) {
+            System.out.println("Неверный ввод. Попробуйте еще раз");
         }
-
-
     }
 }

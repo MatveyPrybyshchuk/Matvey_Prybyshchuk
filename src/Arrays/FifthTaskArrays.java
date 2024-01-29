@@ -7,25 +7,24 @@ import java.util.*;
 //соответствующее сообщение.
 public class FifthTaskArrays {
 
-    public static void fifthTaskSolution (int[] array) {
-        int intMax = array[0];
-        int counterForMax = 0, MaxCounter = 0;
+    public static void fifthTaskSolution (Integer[] array) {
+        ArrayList<Integer> maxed = new ArrayList<>(10);
+        HashMap<Integer, Integer> mapa = new HashMap<>();
 
-        for (int i = 0; i < array.length; i++) {
-            int counter = 0;
-
-            for (int j = 0; j < array.length; j++) {
-                if (array[i] == array[j]) counter++;
-                }
-
-            MaxCounter = counter;
-            if (counter > counterForMax) intMax = array[i];
-            else if (counter == counterForMax) {
-                if (array[i] > intMax) intMax = array[i];
+        for (Integer i : array) {
+            if (mapa.get(i) != null) {
+                Integer value = mapa.get(i);
+                mapa.replace(i, ++value);
             }
+            else mapa.put(i, 1);
         }
+        var max = Collections.max(mapa.values());
+        var keys = mapa.keySet();
 
-        if (MaxCounter > 1) System.out.println("Наибольшее чаще встречаемое число: " + intMax);
-        else System.out.println("Повторяющихся чисел нет!");
+        for (var el : keys) {
+            if (Objects.equals(mapa.get(el), max)) maxed.add(el);
+        }
+        if (maxed.size() == array.length) System.out.println("Повторяющихся чисел нет!");
+        else System.out.print("Наибольшее чаще встречаемое число: " + Collections.max(maxed));
     }
 }

@@ -23,20 +23,6 @@ public class Shop implements ActionListener {
     double price1 = 100, price2 = 200, price3 = 300;
 
 
-    public static JTextField fieldViewToNormal(JTextField el) {
-        el.setHorizontalAlignment(JLabel.CENTER);
-        el.setFont(myFont);
-        el.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-        el.setFocusable(false);
-        return el;
-    }
-    public static JButton buttonViewToNormal(JButton el) {
-        el.setHorizontalAlignment(JLabel.CENTER);
-        el.setFont(myFont);
-        el.setFocusable(false);
-        return el;
-    }
-
     Shop() {
         frame = new JFrame("Shop");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,24 +32,19 @@ public class Shop implements ActionListener {
         helloTextField = new JTextField();
         helloTextField.setBounds(50, 10, 400, 50);
         helloTextField.setText("МЕНЮ");
-        helloTextField.setEditable(false);
         fieldViewToNormal(helloTextField);
 
         panel = new JPanel();
         panel.setBounds(50, 80, 400, 200);
         panel.setLayout(new GridLayout(2, 3, 10, 10));
-        //panel.setBackground(Color.GRAY);
 
         priceFieldForGoodFirst = new JTextField(String.valueOf("Br " + price1));
-        priceFieldForGoodFirst.setEditable(false);
         fieldViewToNormal(priceFieldForGoodFirst);
 
         priceFieldForGoodSecond = new JTextField(String.valueOf("Br " + price2));
-        priceFieldForGoodSecond.setEditable(false);
         fieldViewToNormal(priceFieldForGoodSecond);
 
         priceFieldForGoodThird = new JTextField(String.valueOf("Br " + price3));
-        priceFieldForGoodThird.setEditable(false);
         fieldViewToNormal(priceFieldForGoodThird);
 
 
@@ -77,27 +58,21 @@ public class Shop implements ActionListener {
         buttonViewToNormal(goodThird);
         goodThird.addActionListener(this);
 
-
-
-        priceField = new JTextField("Цена: ");
+        priceField = new JTextField("");
         priceField.setBounds(195, 320, 105, 50);
-        priceField.setEditable(false);
         fieldViewToNormal(priceField);
 
         inputFieldText = new JTextField();
         inputFieldText.setBounds(50, 410, 160, 50);
         inputFieldText.setText("Введите сумму:");
-        inputFieldText.setEditable(false);
         fieldViewToNormal(inputFieldText);
 
         inputField = new JTextField();
         inputField.setBounds(220, 410, 230, 50);
         inputField.setText("");
+        fieldViewToNormal(inputField);
         inputField.setEditable(true);
-        inputField.setHorizontalAlignment(JLabel.CENTER);
-        inputField.setFont(myFont);
-        inputField.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-        //fieldViewToNormal(inputField);
+        inputField.setFocusable(true);
 
         calculateBtn = new JButton("Рассчитать");
         calculateBtn.addActionListener(this);
@@ -107,10 +82,7 @@ public class Shop implements ActionListener {
         resultTextField = new JTextField();
         resultTextField.setBounds(50, 610, 400, 50);
         resultTextField.setText("");
-        resultTextField.setEditable(false);
         fieldViewToNormal(resultTextField);
-
-
 
         panel.add(priceFieldForGoodFirst);
         panel.add(priceFieldForGoodSecond);
@@ -130,9 +102,7 @@ public class Shop implements ActionListener {
         frame.setVisible(true);
 
         showMessageDialog(null, "Выберите товар, введите сумму средств, которой располагаете и нажмите на кнопку 'Рассчитать'");
-
     }
-
 
     public static void eighthTaskSolution() {
         Shop shop = new Shop();
@@ -152,24 +122,49 @@ public class Shop implements ActionListener {
             priceField.setText("Цена: " + price3 + " Br");
             selectedPrice = price3;
         }
-        if (e.getSource() == calculateBtn && selectedPrice > 0) {
-            money = Double.parseDouble(inputField.getText());
-            if (selectedPrice > money) {
-                resultTextField.setText("Денег не хватает!");
-                resultTextField.setBackground(Color.ORANGE);
+        if (e.getSource() == calculateBtn) {
+            if (selectedPrice > 0) {
+                if (inputField.getText().isEmpty()) {
+                    showMessageDialog(null, "Вы не ввели сумму средств!");
+                } else {
+                    try {
+                        money = Double.parseDouble(inputField.getText());
+                        if (selectedPrice > money) {
+                            resultTextField.setText("Денег не хватает!");
+                            resultTextField.setBackground(Color.ORANGE);
+                        }
+                        else if (selectedPrice == money) {
+                            resultTextField.setText("Спасибо за покупку!");
+                            resultTextField.setBackground(Color.GREEN);
+                        }
+                        else if (selectedPrice < money) {
+                            resultTextField.setText("Ваша сдача: " + (money - selectedPrice));
+                            resultTextField.setBackground(Color.GREEN);
+                        }
+                        else {
+                            resultTextField.setText("Что-то пошло не так, попробуйте позже");
+                            resultTextField.setBackground(Color.RED);
+                        }
+                    } catch (Exception exception) {
+                        showMessageDialog(null, "Неверный ввод. Попробуйте еще раз");
+                    }
+                }
             }
-            else if (selectedPrice == money) {
-                resultTextField.setText("Спасибо за покупку!");
-                resultTextField.setBackground(Color.GREEN);
-            }
-            else if (selectedPrice < money) {
-                resultTextField.setText("Ваша сдача: " + (money - selectedPrice));
-                resultTextField.setBackground(Color.GREEN);
-            }
-            else {
-                resultTextField.setText("Что-то пошло не так, попробуйте позже");
-                resultTextField.setBackground(Color.RED);
-            }
+            else showMessageDialog(null, "Вы не выбрали товар!");
         }
+    }
+    public static JTextField fieldViewToNormal(JTextField el) {
+        el.setHorizontalAlignment(JLabel.CENTER);
+        el.setFont(myFont);
+        el.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        el.setFocusable(false);
+        el.setEditable(false);
+        return el;
+    }
+    public static JButton buttonViewToNormal(JButton el) {
+        el.setHorizontalAlignment(JLabel.CENTER);
+        el.setFont(myFont);
+        el.setFocusable(false);
+        return el;
     }
 }

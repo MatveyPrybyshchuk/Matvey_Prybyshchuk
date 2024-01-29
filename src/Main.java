@@ -10,18 +10,18 @@ public class Main {
 
         //Блок "Условные операторы"
 
-        //FirstTaskConditionalStatements.firstTaskSolution();  // 1   100
-        //SecondTaskConditionalStatements.secondTaskSolution();  // 2 100
-        //ThirdTaskConditionalStatements.thirdTaskSolution();  // 3   100
+        //FirstTaskConditionalStatements.firstTaskSolution();  // 1
+        //SecondTaskConditionalStatements.secondTaskSolution();  // 2
+        //ThirdTaskConditionalStatements.thirdTaskSolution();  // 3
         //FourthTaskConditionalStatements.fourthTaskSolution();  // 4
-        //FifthTask.fifthTaskSolution();  // 5
-        //SixthTask.sixthTaskSolution();  // 6
-        //SeventhTask.seventhTaskSolution();  // 7
-        Shop.eighthTaskSolution();  // 8
+        //FifthTaskConditionalStatements.fifthTaskSolution();  // 5
+        //SixthTaskConditionalStatements.sixthTaskSolution();  // 6
+        //SeventhTaskConditionalStatements.seventhTaskSolution();  // 7
+        Shop.eighthTaskSolution();  // 88
 
         //Блок "Циклы"
 
-        //FirstTaskCycle.firstTaskSolution();  // 1 100
+        //FirstTaskCycle.firstTaskSolution();  // 1
         //SecondTaskCycle.secondTaskSolution();  // 2
         //ThirdTaskCycle.thirdTaskSolution();  // 3
         //FourthTaskCycle.fourthTaskSolution();  // 4
@@ -29,15 +29,13 @@ public class Main {
 
         //Блок "Массивы"
 
-        //FirstTaskArrays.fifthTaskSolution(oneMerArray()); // 1    100
-        //SecondTaskArrays.secondTaskSolution(oneMerArray()); // 2    100
-        //ThirdTaskArrays.thirdTaskSolution(oneMerArray()); // 3  100
-        //FourthTaskArrays.fourthTaskSolution(oneMerArray());  // 4 100
+        //FirstTaskArrays.fifthTaskSolution(oneMerArray()); // 1
+        //SecondTaskArrays.secondTaskSolution(oneMerArray()); // 2
+        //ThirdTaskArrays.thirdTaskSolution(oneMerArray()); // 3
+        //FourthTaskArrays.fourthTaskSolution(oneMerArray());  // 4
         //FifthTaskArrays.fifthTaskSolution(oneMerArray()); // 5
-        //SixthTaskArrays.sixthTaskSolution(twoMerArrayTen());  // 6  100
-        //SeventhTaskArrays.seventhTaskSolution(twoMerArrayTen()); // 7 100
-        //EighthTaskArrays.eighthTaskSolution(twoMerArrayFive()); // 8    100
-
-        //estmap.method();
+        //SixthTaskArrays.sixthTaskSolution(twoMerArrayTen());  // 6
+        //SeventhTaskArrays.seventhTaskSolution(twoMerArrayTen()); // 7
+        //EighthTaskArrays.eighthTaskSolution(twoMerArrayFive()); // 8
     }
 }

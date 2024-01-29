@@ -6,16 +6,18 @@ import java.util.Scanner;
 public class FifthTaskConditionalStatements {
     public static void fifthTaskSolution () {
         Scanner scanner = new Scanner(System.in);
-        int nums[] = new int[3];
-        System.out.println("Введите последовательно 3 числа");
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = scanner.nextInt();
-        }
+        Double result = null;
 
-        int result = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] > result) result = nums[i];
+        System.out.println("Введите последовательно 3 числа");
+        try {
+            for (int i = 0; i < 3; i++) {
+                double num = scanner.nextDouble();
+                if (result == null) result = num;
+                else if (num > result) result = num;
+            }
+            System.out.println("Самое большое число: " + result);
+        } catch (Exception e) {
+            System.out.println("Неверный ввод. Попробуйте еще раз");
         }
-        System.out.println("Самое большое число: " + result);
     }
 }

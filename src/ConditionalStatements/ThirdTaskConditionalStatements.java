@@ -10,19 +10,30 @@ public class ThirdTaskConditionalStatements {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            System.out.println("Введите последовательно длины сторон треугольника");
-            int side1 = scanner.nextInt();
-            int side2 = scanner.nextInt();
-            int side3 = scanner.nextInt();
+            System.out.println("Последовательно введите длины трех сторон треугольника");
+            double side1 = scanner.nextDouble();
+            double side2 = scanner.nextDouble();
+            double side3 = scanner.nextDouble();
 
-            if (side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1)
-                if (side1 == side2 && side1 == side3) System.out.println("Треугольник равносторонник!");
-                else if ((side1 == side3 && side1 == side2) || (side2 == side3 & side2 == side1) || (side3 == side1 && side3 == side2)) System.out.println("Треугольник равнобедренный!");
+            if (doesTriangleExist(side1, side2, side3)) {
+                if (isTriangleEquilateral(side1, side2, side3)) System.out.println("Треугольник равносторонний!");
+                else if (isTriangleIsosceles(side1, side2, side3)) System.out.println("Треугольник равнобедренный!");
                 else System.out.println("Треугольник разносторонний!");
-            else
-                System.out.println("Такого треугольника не существует!");
+            } else System.out.println("Такого треугольника не существует!");
         } catch (Exception e) {
-            System.out.println("Неверно введенные данные, попробуйте еще раз");
+            System.out.println("Неверный ввод. Попробуйте еще раз");
         }
+    }
+    //Check is this triangular can exist
+    public static boolean doesTriangleExist(double a, double b, double c) {
+        return a + b > c && a + c > b && b + c > a;
+    }
+    //Check is this triangular equilateral
+    public static boolean isTriangleEquilateral(double a, double b, double c) {
+        return a == b && a == c;
+    }
+    //Check is this triangular isosceles
+    public static boolean isTriangleIsosceles(double a, double b, double c) {
+        return (a == b) || (a == c) || (b == c);
     }
 }

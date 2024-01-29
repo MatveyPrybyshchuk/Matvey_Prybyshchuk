@@ -6,7 +6,7 @@ package Arrays;
 import java.util.Scanner;
 
 public class FirstTaskArrays {
-    public static void fifthTaskSolution (int[] array) {
+    public static void fifthTaskSolution (Integer[] array) {
         int counterPos = 0, counterNeg = 0;
 
         for (int i = 0; i < array.length; i++) {
